@@ -23,7 +23,6 @@ public interface EmpInfoMapper {
 	
 	public void update(Map<String,Object> m);
 	
-	//123456789012345678901234567890
-	//77777777777777777777777777777777777777777777777777
-	//888888888888888888888888888888888888888888888888888
+	//qqqqqqqqqqqqqqqqqqqqqqqqqqqq
+	//wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 }
