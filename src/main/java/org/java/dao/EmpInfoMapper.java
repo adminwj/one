@@ -23,4 +23,5 @@ public interface EmpInfoMapper {
 	
 	public void update(Map<String,Object> m);
 	
+	//123456789012345678901234567890
 }
