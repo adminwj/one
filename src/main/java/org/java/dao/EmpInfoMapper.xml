@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java.dao.EmpInfoMapper">
+	<select id="showEmp" resultType="java.util.HashMap">
+		SELECT * FROM branch
+	</select>
+	
+	<select id="byEmpId" resultType="java.util.HashMap" parameterType="int">
+		SELECT * FROM empInfo a,branch b WHERE a.bid=b.id AND bid=#{id} LIMIT #{index},#{size}
+	</select>
+	
+	<select id="byIdInfo" resultType="java.util.HashMap" parameterType="int">
+		SELECT * FROM empInfo a,branch b WHERE a.bid=b.id AND eid=#{eid}
+	</select>
+	
+	<select id="getCount" resultType="int">
+		SELECT COUNT(*) FROM empInfo a,branch b WHERE a.bid=b.id AND bid=#{id}
+	</select>
+	
+	<delete id="delByEid">
+		DELETE FROM empInfo WHERE eid=#{eid}
+	</delete>
+	
+	<insert id="addEmp" parameterType="java.util.HashMap">
+		INSERT INTO empInfo VALUES (NULL,#{bid},#{name},#{gender},#{age},#{postion},#{tel},#{address});
+	</insert>
+	
+	<update id="update"  parameterType="java.util.HashMap">
+		upsdate empinfo SET bid=#{bid},eName=#{name},gender=#{gender},age=#{age},postion=#{postion},tel=#{tel},address=#{address} where eid=#{eid}
+	</update>
+	
+	<select id="getUser" resultType="String" parameterType="String">
+	SELECT eName FROM empinfo WHERE eName=#{eName}
+	</select>
+</mapper>
